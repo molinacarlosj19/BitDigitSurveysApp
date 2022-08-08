@@ -7,11 +7,13 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutusComponent
+    AboutusComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
