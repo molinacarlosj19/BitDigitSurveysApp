@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import * as moment from "moment";
 
 @Injectable()
 export class AuthService {
-
-    constructor() {}
-          
+    
+    constructor(private http:HttpClient) {}
+    
     setLocalStorage(responseObj: { expiresIn: string; token: string; }) {
 
         // Adds the expiration time defined on the JWT to the current moment

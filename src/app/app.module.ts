@@ -10,12 +10,19 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { AuthService } from './services/auth.service';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutusComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,

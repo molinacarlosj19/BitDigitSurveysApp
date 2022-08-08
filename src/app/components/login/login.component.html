@@ -12,14 +12,15 @@
                       style="width: 400px;" alt="logo">
                   </div>
   
-                  <form method="post">
+                  <!--<form method="post">-->
+                  <form #loginform="ngForm" (ngSubmit)="onLoginSubmit(username,password)" >  
                     <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input type="email" id="form2Example11" class="form-control"
+                      <input #username  type="email" id="form2Example11" class="form-control"
                         placeholder="Username" />
                     </div>
   
                     <div class="form-outline mb-4" style="margin :10px 10px;">
-                      <input type="password" id="form2Example22" class="form-control" placeholder="Password"/>
+                      <input #password  type="password" id="form2Example22" class="form-control" placeholder="Password"/>
                     </div>
   
                     <div class="form-outline mb-4">

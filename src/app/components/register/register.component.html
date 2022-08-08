@@ -1,4 +1,4 @@
-<!--
+
 <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -10,25 +10,26 @@
                   <div>
                     <img src="assets/images/logo.png" style="width: 400px;" alt="logo">
                   </div>
-                  <form (ngSubmit)="onRegisterSubmit()" #registerform="ngForm">
+
+                  <form #loginform="ngForm" (ngSubmit)="onRegisterSubmit(username,firstname,lastname,password,email)" >
                     <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input type="text" id="form2Example11" class="form-control" name="username" id="username" placeholder="Username" ngModel/>
+                      <input #username type="text" id="form2Example11" class="form-control" name="username" id="username" placeholder="Username" ngModel/>
                     </div>
 
                     <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input type="text" id="form2Example11" class="form-control" name="firstname" id="firstname" placeholder="First Name" ngModel/>
+                      <input #firstname type="text" id="form2Example11" class="form-control" name="firstname" id="firstname" placeholder="First Name" ngModel/>
                     </div>
 
                     <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input type="text" id="form2Example11" class="form-control" name="lastname" id="lastname" placeholder="Last Name" />
+                      <input #lastname type="text" id="form2Example11" class="form-control" name="lastname" id="lastname" placeholder="Last Name" />
                     </div>
 
                     <div class="form-outline mb-4" style="margin :10px 10px;">
-                      <input type="password" id="form2Example22" class="form-control" name="password" id="password" placeholder="Password" />
+                      <input #password type="password" id="form2Example22" class="form-control" name="password" id="password" placeholder="Password" />
                     </div>
 
                     <div class="form-outline mb-4" style="margin :10px 10px;">
-                      <input type="emailaddress" id="form2Example22" class="form-control" name="email" id="email" placeholder="Email Address" />
+                      <input #email type="emailaddress" id="form2Example22" class="form-control" name="email" id="email" placeholder="Email Address" />
                     </div>
                     <button type="Submit" class="btn btn-success text-white">Register</button>
 
@@ -42,4 +43,4 @@
       </div>
     </div>
   </section>
-  -->
+ 
