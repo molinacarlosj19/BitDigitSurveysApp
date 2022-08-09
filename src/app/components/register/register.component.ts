@@ -18,23 +18,33 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRegisterSubmit(username:any,firstname:any,lastname:any,password:any,email:any){
+  onRegisterSubmit(username:any,password:any,email:any){
       const reqObject={
         "username":username.value,
-        "firstname":firstname.value,
-        "lastname":lastname.value,
         "password":password.value,
         "email":email.value
       }
       console.log(username.value)
-      console.log(firstname.value)
-      console.log(lastname.value)
       console.log(password.value)
       console.log(email.value)
       const headers = new HttpHeaders({'Content-type': 'application/json'});
-      this.http.post('http://localhost:3000/users/register',reqObject,{}).subscribe((response:any)=>{
-        console.log(response)
-      })
+      this.http.post('http://localhost:3000/users/register', reqObject, { headers: headers }).subscribe(
+       // The response data
+      (response) => {
+        console.log(response);
+      },
+
+      // If there is an error
+      (error) => {
+        console.log(error);
+      },
+
+       // When observable completes
+       () => {
+        console.log('done!');
+        this.router.navigate(['login']);
+      }
+      );
   }
 
 

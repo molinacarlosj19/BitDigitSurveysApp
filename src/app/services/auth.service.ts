@@ -9,7 +9,7 @@ export class AuthService {
     
     constructor(private http:HttpClient) {}
     
-    setLocalStorage(responseObj: { expiresIn: string; token: string; }) {
+    setLocalStorage(responseObj:any) {
 
         // Adds the expiration time defined on the JWT to the current moment
         const expiresAt = moment().add(Number.parseInt(responseObj.expiresIn), 'days');

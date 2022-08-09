@@ -11,17 +11,9 @@
                     <img src="assets/images/logo.png" style="width: 400px;" alt="logo">
                   </div>
 
-                  <form #loginform="ngForm" (ngSubmit)="onRegisterSubmit(username,firstname,lastname,password,email)" >
+                  <form #loginform="ngForm" (ngSubmit)="onRegisterSubmit(username,password,email)" >
                     <div class="form-outline mb-4" style="margin :40px 10px;">
                       <input #username type="text" id="form2Example11" class="form-control" name="username" id="username" placeholder="Username" ngModel/>
-                    </div>
-
-                    <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input #firstname type="text" id="form2Example11" class="form-control" name="firstname" id="firstname" placeholder="First Name" ngModel/>
-                    </div>
-
-                    <div class="form-outline mb-4" style="margin :40px 10px;">
-                      <input #lastname type="text" id="form2Example11" class="form-control" name="lastname" id="lastname" placeholder="Last Name" />
                     </div>
 
                     <div class="form-outline mb-4" style="margin :10px 10px;">
