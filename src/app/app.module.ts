@@ -5,33 +5,54 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { AuthService } from './services/auth.service';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProtectedComponent } from './components/protected/protected.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { SurveyPublicListingComponent } from './components/surveys/survey-public-listing/survey-public-listing.component';
 import { SurveyResponseComponent } from './components/surveys/survey-response/survey-response.component';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    AboutusComponent,
-    HeaderComponent,
-    FooterComponent,
+    ContactComponent
+    LoginComponent,
+    RegisterComponent,
     HomeComponent,
+    ProtectedComponent,
     ContactusComponent,
     SurveyPublicListingComponent,
     SurveyResponseComponent
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
