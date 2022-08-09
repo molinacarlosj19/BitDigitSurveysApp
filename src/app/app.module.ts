@@ -14,6 +14,11 @@ import { AuthService } from './services/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProtectedComponent } from './components/protected/protected.component';
+import { HeaderComponent } from './partials/header/header.component';
+import { FooterComponent } from './partials/footer/footer.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { SurveyPublicListingComponent } from './components/surveys/survey-public-listing/survey-public-listing.component';
+import { SurveyResponseComponent } from './components/surveys/survey-response/survey-response.component';
 
 
 
@@ -27,6 +32,11 @@ import { ProtectedComponent } from './components/protected/protected.component';
     RegisterComponent,
     HomeComponent,
     ProtectedComponent,
+    ContactusComponent,
+    SurveyPublicListingComponent,
+    SurveyResponseComponent
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
