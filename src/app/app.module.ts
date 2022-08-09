@@ -17,24 +17,17 @@ import { ProtectedComponent } from './components/protected/protected.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { SurveyPublicListingComponent } from './components/surveys/survey-public-listing/survey-public-listing.component';
 import { SurveyResponseComponent } from './components/surveys/survey-response/survey-response.component';
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent
+    ContactComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
     ProtectedComponent,
     ContactusComponent,
-    SurveyPublicListingComponent,
-    SurveyResponseComponent
+    SurveyResponseComponent,
     HeaderComponent,
     FooterComponent,
   ],
