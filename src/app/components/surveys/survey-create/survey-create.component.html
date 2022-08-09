@@ -1,0 +1,50 @@
+
+
+<!-- Index Page -->
+<!-- Main Content -->
+
+<body class="body-background">
+  <main class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6">
+          <h3> Create Survey </h3>
+          <br>
+          <!-- Form -->
+          <form class="form" [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+
+              <fieldset class="form-group mb-3">
+                  <label class="form-label" for="surveyTextField1">Survey Id</label>
+                  <input type="text" class="form-control" id="surveyId"
+                  name="surveyId" formControlName="surveyId" >
+              </fieldset>
+
+              <fieldset class="form-group mb-3">
+                  <label class="form-label" for="surveyTextField2">Survey Title</label>
+                  <input type="text" class="form-control" id="surveyTitle"
+                  name="surveyTitle" formControlName="surveyTitle">
+              </fieldset>
+
+              <fieldset class="form-group mb-3">
+                  <label class="form-label" for="surveyTextField3">Survey Description</label>
+                  <input type="text" class="form-control" id="surveyDescription"
+                  name="surveyDescription" formControlName="surveyDescription">
+              </fieldset>
+
+              <fieldset class="form-group mb-3">
+                  <label class="form-label" for="surveyTextField4">Survey surveyCategory</label>
+                  <input type="text" class="form-control" id="surveyTextField4"
+                  name="surveyCategory" formControlName="surveyCategory">
+              </fieldset>
+
+              <!--Button Session-->
+              <div class="d-flex flex-row justify-content-center">
+                <!--Cancel Button-->
+                <button type='reset' class="btn btn-secondary m-3" (click)='returnToSurveyList()'> Cancel</button>
+                <!--Submit Button-->
+                <button class="btn btn-primary m-3" type='submit' [disabled]="!surveyForm.valid"> Submit </button>
+              </div>
+          </form>
+        </div>
+      </div>
+  </main>
+</body>

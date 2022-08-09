@@ -1,22 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="assets/images/logo.png" alt="..." height="36">
-  </a>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a routerLink="surveys" class="nav-link">Surveys</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="aboutus" class="nav-link">About Us</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="contact" class="nav-link">Contact</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="Login" class="nav-link">Login</a>
-    </li>
-  </ul>
-</nav>
-<div class="container mt-3">
-  <router-outlet></router-outlet>
-</div>
+<app-header></app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
