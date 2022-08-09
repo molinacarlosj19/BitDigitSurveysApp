@@ -12,6 +12,9 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { AuthService } from './services/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProtectedComponent } from './components/protected/protected.component';
+
+
 
 
 
@@ -22,6 +25,9 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    ProtectedComponent,
+    
+    
     
   ],
   imports: [
