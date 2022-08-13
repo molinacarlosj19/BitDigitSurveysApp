@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component:ProtectedComponent},
+  { path: 'pubsurveys', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},
   { path: 'survey-mgmt', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },

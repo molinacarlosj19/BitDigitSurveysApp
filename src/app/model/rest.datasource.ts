@@ -31,6 +31,12 @@ export class RestDataSource {
     this.baseUrl = `http://localhost:3000/api/`;
     //this.user = new User();
   }
+
+  getPubSurveys(): Observable<Surveys[]> {
+    //this.loadToken();
+    return this.http.get<Surveys[]>(this.baseUrl + 'surveys');
+  }
+
   getSurveys(): Observable<Surveys[]> {
     //this.loadToken();
     return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
@@ -56,7 +62,8 @@ export class RestDataSource {
 
   getSurveyResponses(id:Object): Observable<SurveyResponse[]> {
     //this.loadToken();
-    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses'+id,this.httpOptions);
+    //return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses'+id,this.httpOptions);
+    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/Respond'+id,this.httpOptions);
   }
   /*private loadUser(): void {
     this.user = JSON.parse(localStorage.getItem('user')!);
