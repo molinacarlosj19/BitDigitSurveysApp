@@ -58,7 +58,7 @@
             />
           </fieldset>
 
-          <table class="form-group mb-3" formArrayName="quantities">
+          <table class="form-group mb-3" formArrayName="questions">
             <tr>
               <label width="500px" class="form-label">Questions</label>
               <th></th>
@@ -71,7 +71,7 @@
               </th>
             </tr>
             <tr
-              *ngFor="let quantity of questions().controls; let i = index"
+              *ngFor="let question of questions().controls; let i = index"
               [formGroupName]="i"
             >
               <td>
@@ -100,7 +100,6 @@
             <button
               class="btn btn-primary m-3"
               type="submit"
-              [disabled]="!surveyForm.valid"
             >
               Submit
             </button>

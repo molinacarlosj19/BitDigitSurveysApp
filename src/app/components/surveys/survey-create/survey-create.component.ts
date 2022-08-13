@@ -23,7 +23,10 @@ export class SurveyCreateComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private fb:FormBuilder) {
       this.surveyForm = this.fb.group({
-        name: '',
+        surveyId: '',
+        surveyTitle:'',
+        surveyDescription:'',
+        surveyCategory:'',
         questions: this.fb.array([]) ,
       });
      }

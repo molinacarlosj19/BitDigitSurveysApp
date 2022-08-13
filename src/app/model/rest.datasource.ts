@@ -29,7 +29,6 @@ export class RestDataSource {
 
   constructor(private http: HttpClient) {
     this.baseUrl = `http://localhost:3000/api/`;
-    //this.user = new User();
   }
   getSurveys(): Observable<Surveys[]> {
     //this.loadToken();
@@ -37,7 +36,7 @@ export class RestDataSource {
   }
 
   addSurvey(survey: Surveys): Observable<Surveys> {
-    //console.log(JSON.stringify(topic));
+   // console.log(JSON.stringify(survey));
     //this.loadToken();
     return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/add', survey, this.httpOptions);
   }
