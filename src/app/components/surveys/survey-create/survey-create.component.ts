@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Surveys } from 'src/app/model/survey.model';
@@ -20,7 +20,13 @@ export class SurveyCreateComponent implements OnInit {
   constructor(
     private repository: SurveysRepo,
     private router: Router,
-    private activeRoute: ActivatedRoute) { }
+    private activeRoute: ActivatedRoute,
+    private fb:FormBuilder) {
+      this.surveyForm = this.fb.group({
+        name: '',
+        questions: this.fb.array([]) ,
+      });
+     }
 
   ngOnInit(): void {
     this.title = this.activeRoute.snapshot.data['title'];
@@ -32,7 +38,21 @@ export class SurveyCreateComponent implements OnInit {
     this.repository.createSurvey(this.surveyForm.value);
     this.router.navigateByUrl('/survey-mgmt/list');
   }
+  questions() : FormArray {
+    return this.surveyForm.get("questions") as FormArray
+  }
+  newQuestion(): FormGroup {
+    return this.fb.group({
+      question: ''
+    })
+  }
 
+  addQuestions() {
+    this.questions().push(this.newQuestion());
+  }
+  removeQuestions(i:number) {
+    this.questions().removeAt(i);
+  }
 
   returnToSurveyList() {
     this.router.navigateByUrl('/survey-mgmt/list');
