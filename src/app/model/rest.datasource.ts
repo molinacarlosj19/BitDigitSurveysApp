@@ -37,6 +37,12 @@ export class RestDataSource {
     return this.http.get<Surveys[]>(this.baseUrl + 'surveys');
   }
 
+  respondSurvey(survey: Surveys): Observable<Comment> {
+    //console.log(JSON.stringify(comment));
+   // this.loadToken();
+    return this.http.post<Comment>(this.baseUrl + 'surveys/respond'+survey._id,survey, this.httpOptions);
+  }
+
   getSurveys(): Observable<Surveys[]> {
     //this.loadToken();
     return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
