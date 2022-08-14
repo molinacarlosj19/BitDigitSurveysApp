@@ -5,7 +5,7 @@ import { SurveyResponse } from './survey_response.model';
 import { RestDataSource } from './rest.datasource';
 
 @Injectable()
-export class SurveysRepo {
+export class PubSurveysRepo {
     private surveys: Surveys[] = [];
 
     constructor(private dataSource: RestDataSource) {

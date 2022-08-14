@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Surveys } from 'src/app/model/survey.model';
-import { SurveysRepo } from 'src/app/model/survey.repository';
+import { PubSurveysRepo } from 'src/app/model/pubsurvey.repository';
 
 @Component({
   selector: 'app-survey-public-listing',
@@ -12,7 +12,7 @@ export class SurveyPublicListingComponent implements OnInit {
 
   title!: string;
 
-  constructor(private repository: SurveysRepo,
+  constructor(private repository: PubSurveysRepo,
     private route: ActivatedRoute,
     private router: Router) { }
 
