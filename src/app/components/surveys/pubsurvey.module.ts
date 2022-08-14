@@ -9,7 +9,7 @@ import { SurveyPublicListingComponent } from './survey-public-listing/survey-pub
 import { SurveyResponseComponent } from './survey-response/survey-response.component';
 
 const routes = RouterModule.forChild([
-  { path: '/list', component: SurveyPublicListingComponent, data: { title: 'Surveys' } },
+  { path: 'list', component: SurveyPublicListingComponent, data: { title: 'Surveys' } },
   { path: 'respond/:id', component: SurveyResponseComponent, data: { title: 'Surveys'} },
 ]);
 
