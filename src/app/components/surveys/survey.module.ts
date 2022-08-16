@@ -13,7 +13,7 @@ import { SurveyResponseComponent } from './survey-response/survey-response.compo
 
 const routes = RouterModule.forChild([
   { path: 'list', component: SurveyListingComponent, data: { title: 'Surveys' } },
-  { path: 'survey-edit/:id', component: SurveyEditComponent, data: { title: 'Surveys'} },
+  { path: 'edit/:id', component: SurveyEditComponent, data: { title: 'Surveys'} },
   { path: 'add', component: SurveyCreateComponent, data: { title: 'Surveys' } },
 ]);
 

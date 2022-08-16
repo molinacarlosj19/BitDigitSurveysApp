@@ -41,10 +41,10 @@ export class RestDataSource {
     return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/add', survey, this.httpOptions);
   }
 
-  editSurvey(survey: Surveys): Observable<Comment> {
+  editSurvey(survey: Surveys): Observable<Surveys> {
     //console.log(JSON.stringify(comment));
    // this.loadToken();
-    return this.http.post<Comment>(this.baseUrl + 'survey-mgmt/edit'+survey._id,survey, this.httpOptions);
+    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit'+survey._id,survey, this.httpOptions);
   }
 
   deleteSurvey(id: Object): Observable<Surveys> {
@@ -57,7 +57,13 @@ export class RestDataSource {
     //this.loadToken();
     return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses'+id,this.httpOptions);
   }
+
+  getSurveyQuestions(id:Object):Observable<SurveyQuestion[]> {
+    console.log("hello444");
+    return this.http.get<SurveyQuestion[]>(this.baseUrl + 'survey-mgmt/questions/'+id,this.httpOptions);
+  }
   /*private loadUser(): void {
+
     this.user = JSON.parse(localStorage.getItem('user')!);
   }
 

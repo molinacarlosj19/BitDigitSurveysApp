@@ -3,13 +3,14 @@ import { Surveys } from './survey.model';
 import { SurveyQuestion } from './survey_question.model';
 import { SurveyResponse } from './survey_response.model';
 import { RestDataSource } from './rest.datasource';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SurveysRepo {
     private surveys: Surveys[] = [];
 
     constructor(private dataSource: RestDataSource) {
-        this.refresh();
+       this.refresh();
     }
 
     refresh(): void{
@@ -65,6 +66,9 @@ export class SurveysRepo {
         });
     }
 
+    getSurveyQuestions(surveyId:String): Observable<SurveyQuestion[]> {
+      return this.dataSource.getSurveyQuestions(surveyId)
+    }
     /*get authenticated(): boolean {
         return this.dataSource.loggedIn();
     }
