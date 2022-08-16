@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <h3  class="darkText">Surveys</h3>
-        
+
         <br>
         <br>
         <div class="table-responsive">
@@ -13,7 +13,6 @@
                 <th>Survey Title</th>
                 <th class="text-center">Survey Description</th>
                 <th class="text-center">Survey Category</th>
-                <th class="text-center"></th>
                 <th class="text-center"></th>
               </tr>
               </thead>
@@ -29,14 +28,6 @@
                   <!-- ------------------------ -->
                    <a (click)='respondSurvey(survey._id!)' class="btn btn-primary btn-sm">
                     <i class="fa-thin fa-block-question"></i>Respond</a>
-                </td>
-
-                <td class="text-center">
-                  <!-- ------------------------ -->
-                  <!-- ADD the Remove BUTTON HERE -->
-                  <!-- ------------------------ -->
-                  <a (click)='respondSurvey(survey._id!)' class="btn btn-danger btn-sm">
-                  <i class="fa-thin fa-block-question"></i>Remove</a>
                 </td>
               </tr>
             </tbody>

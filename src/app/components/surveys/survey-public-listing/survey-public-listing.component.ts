@@ -28,7 +28,7 @@ export class SurveyPublicListingComponent implements OnInit {
 
  respondSurvey(id: number): void
  {
-   this.router.navigateByUrl('/surveys/respond' + id);
+   this.router.navigateByUrl('/pubsurveys/respond/' + id);
  }
 
 }
