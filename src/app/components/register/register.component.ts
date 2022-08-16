@@ -12,20 +12,23 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   // @ViewChild('registerform', { static: false })
   // registerForm!: NgForm;
+  userAlreadyExist = false;
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
-  onRegisterSubmit(username:any,firstname:any,lastname:any,password:any,email:any,role:any){
+  onRegisterSubmit(userdata : any){
       const reqObject={
-        "username":username.value,
-        "firstname":firstname.value,
-        "lastname":lastname.value,
-        "password":password.value,
-        "emailAddress":email.value,
-        "roles":[role.value]
+        "username":userdata.username,
+        "firstname":userdata.firstname,
+        "lastname":userdata.lastname,
+        "password":userdata.password,
+        "emailAddress":userdata.email,
+        "roles":[userdata.role]
       }
       const headers = new HttpHeaders({'Content-type': 'application/json'});
       this.http.post('http://localhost:3000/users/api/auth/signup', reqObject, { headers: headers }).subscribe(
@@ -37,7 +40,10 @@ export class RegisterComponent implements OnInit {
       // If there is an error
       (error) => {
         console.log(error);
-        alert(error.message);
+        if (error.status == 400) {
+          this.userAlreadyExist = true;
+        }
+        
       },
 
        // When observable completes
