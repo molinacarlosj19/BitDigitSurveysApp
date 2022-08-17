@@ -44,18 +44,18 @@ export class RestDataSource {
   editSurvey(survey: Surveys): Observable<Surveys> {
     //console.log(JSON.stringify(comment));
    // this.loadToken();
-    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit'+survey._id,survey, this.httpOptions);
+    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit/'+survey._id,survey, this.httpOptions);
   }
 
   deleteSurvey(id: Object): Observable<Surveys> {
     //this.loadToken();
     //console.log(id);
-    return this.http.get<Surveys>(this.baseUrl + 'survey-mgmt/delete' + id, this.httpOptions);
+    return this.http.get<Surveys>(this.baseUrl + 'survey-mgmt/delete/' + id, this.httpOptions);
   }
 
   getSurveyResponses(id:Object): Observable<SurveyResponse[]> {
     //this.loadToken();
-    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses'+id,this.httpOptions);
+    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses/'+id,this.httpOptions);
   }
 
   getSurveyQuestions(id:Object):Observable<SurveyQuestion[]> {
