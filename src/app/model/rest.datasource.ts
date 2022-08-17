@@ -41,10 +41,10 @@ export class RestDataSource {
     return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/add', survey, this.httpOptions);
   }
 
-  editSurvey(survey: Surveys): Observable<Surveys> {
+  editSurvey(survey: Surveys,id: Object): Observable<Surveys> {
     //console.log(JSON.stringify(comment));
    // this.loadToken();
-    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit/'+survey._id,survey, this.httpOptions);
+    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit/'+id,survey, this.httpOptions);
   }
 
   deleteSurvey(id: Object): Observable<Surveys> {

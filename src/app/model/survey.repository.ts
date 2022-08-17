@@ -41,13 +41,13 @@ export class SurveysRepo {
     }
 
     modifySurveys(savedSurvey: Surveys, id: any): void {
-        if (savedSurvey._id === null || savedSurvey._id === 0) {
+        if (id === null || id == 0) {
             this.dataSource.addSurvey(savedSurvey).subscribe(b => {
                 this.refresh();
             });
         }
         else {
-            this.dataSource.editSurvey(savedSurvey).subscribe(survey => {
+            this.dataSource.editSurvey(savedSurvey,id).subscribe(survey => {
                 this.refresh();
             });
         }

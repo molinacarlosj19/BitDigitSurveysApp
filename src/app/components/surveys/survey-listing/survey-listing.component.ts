@@ -32,7 +32,7 @@ export class SurveyListingComponent implements OnInit {
  deleteSurvey(id: number): void
  {
    this.repository.deleteSurvey(id);
-   this.router.navigateByUrl('/survey-mgmt/delete');
+   this.router.navigateByUrl('/survey-mgmt/list');
  }
 
 
