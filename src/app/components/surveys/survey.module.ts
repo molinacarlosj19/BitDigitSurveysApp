@@ -8,12 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SurveyListingComponent } from './survey-listing/survey-listing.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 import { SurveyCreateComponent } from './survey-create/survey-create.component';
-import { SurveyResponseComponent } from './survey-response/survey-response.component';
 
 const routes = RouterModule.forChild([
   { path: 'list', component: SurveyListingComponent, data: { title: 'Surveys' } },
-  { path: 'survey-edit/:id', component: SurveyEditComponent, data: { title: 'Surveys'} },
-  { path: 'survey-create', component: SurveyCreateComponent, data: { title: 'Surveys' } },
+  { path: 'edit/:id', component: SurveyEditComponent, data: { title: 'Surveys'} },
+  { path: 'add', component: SurveyCreateComponent, data: { title: 'Surveys' } },
 ]);
 
 @NgModule({

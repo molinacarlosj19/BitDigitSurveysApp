@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'pubsurveys', loadChildren: () => import('./components/surveys/pubsurvey.module').then(m => m.PubSurveyModule)},
   { path: 'survey-mgmt', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
-  { path: '', redirectTo: '/home',pathMatch:'full'},
+  //{ path: '**', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/home',pathMatch:'full'},
 ];
 
 @NgModule({
