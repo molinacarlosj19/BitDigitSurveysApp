@@ -17,7 +17,7 @@ export class ProtectedComponent implements OnInit {
   //message: String
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:3000/users/protected').subscribe(
+    this.http.get<any>('http://localhost:3000/users/api/auth/protected').subscribe(
       (response) => {
         if (response) {
           //this.message = response.msg;
