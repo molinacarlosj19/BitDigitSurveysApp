@@ -1,1 +1,48 @@
-<p>survey-response works!</p>
+<!-- Index Page -->
+<!-- Main Content -->
+
+<body class="body-background">
+  <main class="container">
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+        <h3>Respond to Survey</h3>
+        <br />
+        <!-- Form -->
+        <form class="form" [formGroup]="surveyResponseForm" (ngSubmit)="onSubmit()">
+          <table class="form-group mb-3" formArrayName="questions">
+            <tr *ngFor="
+                let response of responses().controls;
+                let test;
+                of: demo;
+                let i = index">
+              <div [formGroupName]="i">
+            <tr>
+              <td>
+                <input type="text" style="width: 200% !important" [value]="demo[i].Question" class="form-control"
+                  [readonly]="true" />
+              </td>
+            </tr>
+            <br />
+            <tr>
+              <td>
+                <input type="text" style="width: 200% !important" formControlName="response" class="form-control" />
+              </td>
+            </tr>
+            <br />
+      </div>
+      </tr>
+      </table>
+      <!--Button Session-->
+      <div class="d-flex flex-row justify-content-center">
+        <!--Cancel Button-->
+        <button type="reset" class="btn btn-secondary m-3" (click)="returnToPublicSurveyList()">
+          Cancel
+        </button>
+        <!--Submit Button-->
+        <button class="btn btn-primary m-3" type="submit">Save</button>
+      </div>
+      </form>
+    </div>
+    </div>
+  </main>
+</body>
