@@ -26,7 +26,7 @@ export class SurveyListingComponent implements OnInit {
 
  editSurvey(id: number): void
  {
-   this.router.navigateByUrl('/survey-mgmt/edit' + id);
+   this.router.navigateByUrl('/survey-mgmt/edit/' + id);
  }
 
  deleteSurvey(id: number): void

@@ -20,8 +20,8 @@ const routes: Routes = [
   { path: 'protected', component:ProtectedComponent},
   { path: 'survey-mgmt', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
-  { path: '', redirectTo: '/home',pathMatch:'full'},
+  //{ path: '**', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/home',pathMatch:'full'},
 ];
 
 @NgModule({
