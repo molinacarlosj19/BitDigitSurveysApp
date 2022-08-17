@@ -12,23 +12,26 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   // @ViewChild('registerform', { static: false })
   // registerForm!: NgForm;
+  userAlreadyExist = false;
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
-  onRegisterSubmit(username:any,password:any,email:any){
+  onRegisterSubmit(userdata : any){
       const reqObject={
-        "username":username.value,
-        "password":password.value,
-        "email":email.value
+        "username":userdata.username,
+        "firstname":userdata.firstname,
+        "lastname":userdata.lastname,
+        "password":userdata.password,
+        "emailAddress":userdata.email,
+        "roles":[userdata.role]
       }
-      console.log(username.value)
-      console.log(password.value)
-      console.log(email.value)
       const headers = new HttpHeaders({'Content-type': 'application/json'});
-      this.http.post('http://localhost:3000/users/register', reqObject, { headers: headers }).subscribe(
+      this.http.post('http://localhost:3000/users/api/auth/signup', reqObject, { headers: headers }).subscribe(
        // The response data
       (response) => {
         console.log(response);
@@ -37,6 +40,10 @@ export class RegisterComponent implements OnInit {
       // If there is an error
       (error) => {
         console.log(error);
+        if (error.status == 400) {
+          this.userAlreadyExist = true;
+        }
+        
       },
 
        // When observable completes
@@ -46,40 +53,4 @@ export class RegisterComponent implements OnInit {
       }
       );
   }
-
-
-
-    // Submits a post request to the /users/register route of our Express app
-    // onRegisterSubmit() {
-    //   const username = this.registerForm.value.username ;
-    //   const password = this.registerForm.value.password;
-  
-    //   const headers = new HttpHeaders({'Content-type': 'application/json'});
-  
-    //   const reqObject = {
-    //     username: username,
-    //     password: password
-    //   };
-  
-    //   this.http.post('http://localhost:3000/users/register', reqObject, { headers: headers }).subscribe(
-        
-    //     // The response data
-    //     (response) => {
-    //       console.log(response);
-    //     },
-  
-    //     // If there is an error
-    //     (error) => {
-    //       console.log(error);
-    //     },
-        
-    //     // When observable completes
-    //     () => {
-    //       console.log('done!');
-    //       this.router.navigate(['login']);
-    //     }
-  
-    //   );
-    // }
-
 }

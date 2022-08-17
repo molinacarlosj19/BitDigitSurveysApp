@@ -34,10 +34,15 @@
           <a class="nav-link"routerLink="/contactus">Contact us <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+          <a class="nav-link" *ngIf="!authService.isLoggedIn()" href="/login">Login<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" href="/protected">Protected<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">      
+          <a class="nav-link" style = "cursor:pointer" *ngIf="!authService.isLoggedOut()" (click)= "handleLogOut()">Logout<span class="sr-only">(current)</span> </a>
         </li>
       </ul>
-
     </div>
   </nav>
   <script src="/Scripts/app.js"></script>
