@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
         "lastname":userdata.lastname,
         "password":userdata.password,
         "emailAddress":userdata.email,
-        "roles":[userdata.role]
+        "roles":['user']
       }
       const headers = new HttpHeaders({'Content-type': 'application/json'});
       this.http.post('http://localhost:3000/users/api/auth/signup', reqObject, { headers: headers }).subscribe(
