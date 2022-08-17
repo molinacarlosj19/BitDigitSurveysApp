@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'contact', component:ContactComponent},
   { path: 'email', component:EmailComponent},
   { path: 'protected', component:ProtectedComponent},
   { path: 'survey-mgmt', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},

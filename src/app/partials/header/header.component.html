@@ -11,7 +11,7 @@
 <body>
 
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container px-5">
       <img href="/" src="/assets/images/logo.png" alt="..." style="width:20% ;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -30,7 +30,7 @@
                 class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/contactus">Contact us <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/contact">Contact us <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" *ngIf="!authService.isLoggedIn()" href="/login">Login<span
