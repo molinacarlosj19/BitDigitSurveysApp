@@ -14,11 +14,20 @@ export class SurveysRepo {
     }
 
     refresh(): void{
-        this.dataSource.getSurveys().subscribe(data => {
+        if(localStorage.getItem('userrole')== 'admin'){
+          this.dataSource.getSurveys().subscribe(data => {
 
             this.surveys = data;
             this.storeSurveyData(data);
         });
+        }
+        else {
+          this.dataSource.getSurveysByUsername(localStorage.getItem('username')!).subscribe(data => {
+
+            this.surveys = data;
+            this.storeSurveyData(data);
+        });
+        }
     }
 
     storeSurveyData(surveys: Surveys[]) {

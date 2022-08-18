@@ -10,12 +10,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router , public authService:AuthService) { }
 
-  handleLogOut() { 
+  handleLogOut() {
     this.authService.logout();
     console.log('LogOut Successfully') ;
-  } 
+    this.router.navigateByUrl('/home');
+  }
 
-  
+
   ngOnInit(): void {
   }
 
