@@ -4,7 +4,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProtectedComponent } from './components/protected/protected.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EmailComponent } from './components/email/email.component';
 
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'email', component:EmailComponent},
-  { path: 'protected', component:ProtectedComponent},
   { path: 'survey-mgmt', loadChildren: () => import('./components/surveys/survey.module').then(m => m.SurveyModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   //{ path: '**', redirectTo: '/home', pathMatch: 'full' },
