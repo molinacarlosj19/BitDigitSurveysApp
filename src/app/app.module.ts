@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProtectedComponent } from './components/protected/protected.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
+import { EmailComponent } from './components/email/email.component';
+import { SurveyResponseComponent } from './components/surveys/survey-response/survey-response.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     ContactusComponent,
     HeaderComponent,
     FooterComponent,
+    EmailComponent,
   ],
   imports: [
     BrowserModule,
