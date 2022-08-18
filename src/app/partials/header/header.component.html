@@ -31,11 +31,7 @@
             <a class="nav-link" routerLink="/aboutus">About us <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/pubsurveys/list">Public Surveys<span
-                class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/survey-mgmt/list">Survey Management <span
+            <a class="nav-link" *ngIf="authService.isLoggedIn()" routerLink="/survey-mgmt/list">Survey Management <span
                 class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
@@ -44,9 +40,6 @@
           <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" *ngIf="!authService.isLoggedIn()" href="/login">Login<span
                 class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" href="/protected">Protected<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" style="cursor:pointer" *ngIf="!authService.isLoggedOut()"
