@@ -9,29 +9,23 @@
         <br />
         <!-- Form -->
         <form class="form" [formGroup]="surveyResponseForm" (ngSubmit)="onSubmit()">
-          <table class="form-group mb-3" formArrayName="questions">
-            <tr *ngFor="
+          <div class="form-group mb-3" formArrayName="responses">
+            <div *ngFor="
                 let response of responses().controls;
-                let test;
-                of: demo;
-                let i = index">
-              <div [formGroupName]="i">
-            <tr>
-              <td>
-                <input type="text" style="width: 200% !important" [value]="demo[i].Question" class="form-control"
+                let test of demo; let i = index" [formGroupName]="i">
+              <!-- <div [formGroupName]="i"> -->
+              <div>
+                <input type="text" style="width: 100% !important" [value]="demo[i].Question" class="form-control"
                   [readonly]="true" />
-              </td>
-            </tr>
-            <br />
-            <tr>
-              <td>
-                <input type="text" style="width: 200% !important" formControlName="response" class="form-control" />
-              </td>
-            </tr>
-            <br />
-      </div>
-      </tr>
-      </table>
+              </div>
+
+              <div>
+                <input type="text" style="width: 100% !important" formControlName="response" class="form-control" />
+              </div>
+              <p> </p>
+      <!-- </div> -->
+            </div>
+    </div>
       <!--Button Session-->
       <div class="d-flex flex-row justify-content-center">
         <!--Cancel Button-->

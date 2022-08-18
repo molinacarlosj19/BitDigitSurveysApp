@@ -51,11 +51,11 @@ export class SurveyResponseComponent implements OnInit {
       this.surveyResponseForm.value,
       this.surveyResponseForm.value._id
     );
-    this.router.navigateByUrl('/survey-mgmt/list');
+    this.router.navigateByUrl('/pubsurveys/list');
   }
 
   returnToSurveyList() {
-    this.router.navigateByUrl('/survey-mgmt/list');
+    this.router.navigateByUrl('/pubsurveys/list');
   }
   questions(): FormArray {
     return this.surveyResponseForm.get('questions') as FormArray;
@@ -68,7 +68,11 @@ export class SurveyResponseComponent implements OnInit {
       question: '',
     });
   }
-
+  newResponse(): FormGroup {
+    return this.formBuilder.group({
+      response: '',
+    });
+  }
   addQuestions() {
     this.questions().push(this.newQuestion());
   }
@@ -77,9 +81,17 @@ export class SurveyResponseComponent implements OnInit {
       console.log(data);
       data.forEach((q) => {
         this.demo.push(q);
+        this.responses().push(this.formBuilder.group({
+          response: '',
+          question:q.Question,
+          questionId:q._id,
+          surveyId:q.SurveyId
+        }));
         this.questions().push(
           this.formBuilder.group({
             question: q.Question,
+            questionId:q._id,
+            surveyId:q.SurveyId
           })
         );
       });
