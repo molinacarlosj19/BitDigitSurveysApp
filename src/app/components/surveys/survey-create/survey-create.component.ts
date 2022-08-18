@@ -27,6 +27,7 @@ export class SurveyCreateComponent implements OnInit {
         surveyTitle:'',
         surveyDescription:'',
         surveyCategory:'',
+        username: localStorage.getItem("username"),
         questions: this.fb.array([]) ,
       });
      }
