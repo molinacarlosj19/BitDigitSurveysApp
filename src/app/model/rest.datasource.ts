@@ -30,6 +30,18 @@ export class RestDataSource {
   constructor(private http: HttpClient) {
     this.baseUrl = `http://localhost:3000/api/`;
   }
+
+  getPubSurveys(): Observable<Surveys[]> {
+    //this.loadToken();
+    return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
+  }
+
+  respondSurvey(survey: Surveys): Observable<Comment> {
+    //console.log(JSON.stringify(comment));
+   // this.loadToken();
+    return this.http.post<Comment>(this.baseUrl + 'surveys/respond'+survey._id,survey, this.httpOptions);
+  }
+
   getSurveys(): Observable<Surveys[]> {
     //this.loadToken();
     return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
@@ -55,7 +67,8 @@ export class RestDataSource {
 
   getSurveyResponses(id:Object): Observable<SurveyResponse[]> {
     //this.loadToken();
-    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses/'+id,this.httpOptions);
+    //return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses'+id,this.httpOptions);
+    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/Respond'+id,this.httpOptions);
   }
 
   getSurveyQuestions(id:Object):Observable<SurveyQuestion[]> {
