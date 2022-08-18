@@ -18,7 +18,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { EmailComponent } from './components/email/email.component';
-import { SurveyResponseComponent } from './components/surveys/survey-response/survey-response.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,6 @@ import { SurveyResponseComponent } from './components/surveys/survey-response/su
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    SurveyResponseComponent,
     HeaderComponent,
     FooterComponent,
     EmailComponent
