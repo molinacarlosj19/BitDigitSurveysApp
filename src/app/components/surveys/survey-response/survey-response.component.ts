@@ -47,9 +47,8 @@ export class SurveyResponseComponent implements OnInit {
 
   onSubmit() {
     this.surveyResponseForm.value;
-    this.repository.modifySurveys(
-      this.surveyResponseForm.value,
-      this.surveyResponseForm.value._id
+    this.pubSurveyRepositroy.createResponses(
+      this.surveyResponseForm.value
     );
     this.router.navigateByUrl('/pubsurveys/list');
   }

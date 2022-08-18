@@ -39,37 +39,10 @@ export class PubSurveysRepo {
         return this.surveys;
     }
 
-    modifySurveys(savedSurvey: Surveys, id: any): void {
-        if (savedSurvey._id === null || savedSurvey._id === 0) {
-            this.dataSource.addSurvey(savedSurvey).subscribe(b => {
-                this.refresh();
-            });
-        }
-        else {
-            this.dataSource.editSurvey(savedSurvey).subscribe(survey => {
-                this.refresh();
-            });
-        }
-    }
-
-    createSurvey(surveyDetails: Surveys):void{
-      this.dataSource.addSurvey(surveyDetails).subscribe(b => {
+    createResponses(surveyResponseDetails: Object):void{
+      this.dataSource.addSurveyResponse(surveyResponseDetails).subscribe(b => {
         this.refresh();
     });
 }
 
-    deleteSurvey(deleteSurveyId: number): void {
-
-        this.dataSource.deleteSurvey(deleteSurveyId).subscribe(tournament => {
-            this.refresh();
-        });
-    }
-
-    /*get authenticated(): boolean {
-        return this.dataSource.loggedIn();
-    }
-
-    get username(): String {
-        return this.dataSource.getUsername();
-    }*/
 }
