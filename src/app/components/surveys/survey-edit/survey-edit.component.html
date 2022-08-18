@@ -11,11 +11,6 @@
           <br>
           <!-- Form -->
           <form class="form" [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
-            <fieldset class="form-group mb-3">
-              <label  class="form-label" for="titleTextField">Survey Id</label>
-              <input type="text" class="form-control" id="titleTextField"
-              name="title" formControlName="surveyId" value ="{{surveys.Survey_id}}" required>
-              </fieldset>
               <fieldset class="form-group mb-3">
                 <label  class="form-label" for="titleTextField">Survey Title</label>
                 <input type="text" class="form-control" id="titleTextField"

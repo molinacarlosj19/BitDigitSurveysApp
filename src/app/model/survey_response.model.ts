@@ -2,10 +2,9 @@
 export class SurveyResponse{
   constructor(
 public _id?:number,
-public ResponseId?: String,
+public SurveyId?: String,
 public Response?: String,
-public QuestionId?: String,
-public SurveyQuestionId?: String
+public QuestionId?: String
 ){}
 public toString(): string
 {
@@ -13,10 +12,9 @@ public toString(): string
     SurveyResponses
     -------------------------------
     Id         : ${this._id}
-    ResponseId      : ${this.ResponseId}
+    SurveyId      : ${this.SurveyId}
     Response      : ${this.Response}
     QuestionId   : ${this.QuestionId}
-    SurveyQuestionId : ${this.SurveyQuestionId}
     `;
 }
 }

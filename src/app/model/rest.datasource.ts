@@ -30,6 +30,18 @@ export class RestDataSource {
   constructor(private http: HttpClient) {
     this.baseUrl = `http://localhost:3000/api/`;
   }
+
+  getPubSurveys(): Observable<Surveys[]> {
+    //this.loadToken();
+    return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
+  }
+
+  respondSurvey(survey: Surveys): Observable<Comment> {
+    //console.log(JSON.stringify(comment));
+   // this.loadToken();
+    return this.http.post<Comment>(this.baseUrl + 'surveys/respond'+survey._id,survey, this.httpOptions);
+  }
+
   getSurveys(): Observable<Surveys[]> {
     //this.loadToken();
     return this.http.get<Surveys[]>(this.baseUrl + 'survey-mgmt/list');
@@ -41,10 +53,10 @@ export class RestDataSource {
     return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/add', survey, this.httpOptions);
   }
 
-  editSurvey(survey: Surveys): Observable<Surveys> {
+  editSurvey(survey: Surveys,id: Object): Observable<Surveys> {
     //console.log(JSON.stringify(comment));
    // this.loadToken();
-    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit/'+survey._id,survey, this.httpOptions);
+    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/edit/'+id,survey, this.httpOptions);
   }
 
   deleteSurvey(id: Object): Observable<Surveys> {
@@ -53,58 +65,15 @@ export class RestDataSource {
     return this.http.get<Surveys>(this.baseUrl + 'survey-mgmt/delete/' + id, this.httpOptions);
   }
 
-  getSurveyResponses(id:Object): Observable<SurveyResponse[]> {
-    //this.loadToken();
-    return this.http.get<SurveyResponse[]>(this.baseUrl + 'surveys/surveyResponses/'+id,this.httpOptions);
-  }
 
   getSurveyQuestions(id:Object):Observable<SurveyQuestion[]> {
     console.log("hello444");
     return this.http.get<SurveyQuestion[]>(this.baseUrl + 'survey-mgmt/questions/'+id,this.httpOptions);
   }
-  /*private loadUser(): void {
-
-    this.user = JSON.parse(localStorage.getItem('user')!);
-  }
-
-  private loadToken(): void {
-    const token = localStorage.getItem('id_token');
-    this.authToken = token || '';
-    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
-  }
-
-  logout(): Observable<any> {
-    this.authToken = null || '';
-    this.user = null;
-    localStorage.removeItem('user');
-    localStorage.removeItem('id_token');
-
-
-    return this.http.get<any>('http://localhost:3000/' + 'logout', this.httpOptions);
-  }
-
-  loggedIn(): boolean {
-    // console.log(this.authToken);
-    this.loadToken();
-    return !this.jwtService.isTokenExpired(this.authToken);
-  }
-
-  getDisplayName(): string {
-    this.loadUser();
-
-    if (this.user != null)
-      return this.user.displayName;
-    else
-        return '';
-  }
-
-  getUsername(): String {
-    this.loadUser();
-
-    if (this.user != null)
-      return this.user.username;
-    else
-        return '';
-  }*/
+  addSurveyResponse(surveyResponse: Object): Observable<SurveyResponse> {
+    // console.log(JSON.stringify(survey));
+     //this.loadToken();
+     return this.http.post<Object>(this.baseUrl + 'pub-surveys/respond/add', surveyResponse, this.httpOptions);
+   }
 }
 

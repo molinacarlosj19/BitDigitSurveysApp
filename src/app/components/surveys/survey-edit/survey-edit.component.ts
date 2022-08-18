@@ -53,7 +53,7 @@ export class SurveyEditComponent implements OnInit {
 }
 
   onSubmit() {
-      this.repository.modifySurveys(this.surveyForm.value, this.surveyForm.value._id);
+      this.repository.modifySurveys(this.surveyForm.value, this.surveys._id);
       this.router.navigateByUrl('/survey-mgmt/list');
   }
 
