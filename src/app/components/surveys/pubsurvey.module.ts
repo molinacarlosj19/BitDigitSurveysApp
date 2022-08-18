@@ -16,6 +16,6 @@ const routes = RouterModule.forChild([
 @NgModule({
   imports: [ModelModule, CommonModule, FormsModule, ReactiveFormsModule, routes],
   providers: [],
-  declarations: [SurveyPublicListingComponent,SurveyResponseComponent]
+  declarations: [SurveyPublicListingComponent]
 })
 export class PubSurveyModule {}
