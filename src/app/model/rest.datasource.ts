@@ -25,7 +25,7 @@ export class RestDataSource {
     };
 
   constructor(private http: HttpClient) {
-    this.baseUrl = `http://localhost:3000/api/`;
+    this.baseUrl = `https://comp229-bitdigitsurveys-be.herokuapp.com/api/`;
   }
 
   getPubSurveys(): Observable<Surveys[]> {
