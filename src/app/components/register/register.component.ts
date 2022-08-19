@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
         "roles":['user']
       }
       const headers = new HttpHeaders({'Content-type': 'application/json'});
-      this.http.post('http://localhost:3000/users/api/auth/signup', reqObject, { headers: headers }).subscribe(
+      this.http.post('https://comp229-bitdigitsurveys-be.herokuapp.com/users/api/auth/signup', reqObject, { headers: headers }).subscribe(
        // The response data
       (response) => {
         console.log(response);
@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
         if (error.status == 400) {
           this.userAlreadyExist = true;
         }
-        
+
       },
 
        // When observable completes
