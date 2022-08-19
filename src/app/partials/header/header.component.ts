@@ -8,7 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router , public authService:AuthService) { }
+  username!: any;
+
+  constructor(private router: Router , public authService:AuthService) {
+  }
 
   handleLogOut() {
     this.authService.logout();
@@ -18,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('username');
   }
 
 }
