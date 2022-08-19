@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
         if (error.status == 400) {
           this.userAlreadyExist = true;
         }
-        
+
       },
 
        // When observable completes

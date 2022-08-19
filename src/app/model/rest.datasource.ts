@@ -56,7 +56,7 @@ export class RestDataSource {
   }
 
   deleteSurvey(id: Object): Observable<Surveys> {
-    return this.http.get<Surveys>(this.baseUrl + 'survey-mgmt/delete/' + id, this.httpOptions);
+    return this.http.post<Surveys>(this.baseUrl + 'survey-mgmt/delete/' + id, this.httpOptions);
   }
 
 
