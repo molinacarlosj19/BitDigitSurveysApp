@@ -70,7 +70,7 @@ export class SurveysRepo {
 
     deleteSurvey(deleteSurveyId: number): void {
 
-        this.dataSource.deleteSurvey(deleteSurveyId).subscribe(tournament => {
+        this.dataSource.deleteSurvey(deleteSurveyId).subscribe(survey => {
             this.refresh();
         });
     }
@@ -78,11 +78,5 @@ export class SurveysRepo {
     getSurveyQuestions(surveyId:String): Observable<SurveyQuestion[]> {
       return this.dataSource.getSurveyQuestions(surveyId)
     }
-    /*get authenticated(): boolean {
-        return this.dataSource.loggedIn();
-    }
 
-    get username(): String {
-        return this.dataSource.getUsername();
-    }*/
 }
